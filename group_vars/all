@@ -30,6 +30,6 @@ item_path: /var/tmp/dump.sql
 available_zone: us-east-2b
 node_count: 1
 master_count: 1
-node_size= t2.micro 
-master_size= t2.micro
+node_size: t2.micro 
+master_size: t2.micro
 
