@@ -1,0 +1,2 @@
+#[kubernetes]
+ # 3.138.199.152  ansible_user=ubuntu ansible_ssh_private_key=/root/.ssh/id_rsa
