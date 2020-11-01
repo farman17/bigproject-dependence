@@ -1,0 +1,8 @@
+- name: Apply Ingress Mandatory 
+  command: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.27.1/deploy/static/mandatory.yaml
+  
+- name: Apply Ingress Service~14 
+  command: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.27.1/deploy/static/provider/aws/service-l4.yaml
+  
+- name: Apply Ingress ConfigMap
+  command: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.27.1/deploy/static/provider/aws/patch-configmap-l4.yaml
