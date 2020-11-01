@@ -26,3 +26,10 @@ state_store: s3://bucket.dev.dailybugis.my.id
 #Folder location to deploy DB Dump SQL
 item_path: /var/tmp/dump.sql
 
+#setting kubernetes
+available_zone: us-east-2b
+node_count: 1
+master_count: 1
+node_size= t2.micro 
+master_size= t2.micro
+
