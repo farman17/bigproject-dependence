@@ -7,8 +7,11 @@
     - awscli
     - kubectl
     - kops
+    - php
+    - nginx
+    - database
     - k8s
-    - ingress
+    
  
 #- name: Install MySQL
 #  hosts: db
