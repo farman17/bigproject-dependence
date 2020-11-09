@@ -1,7 +1,33 @@
-- name: install awscli
+- name: Install Python simplejson
   apt:
-    name: awscli
-- name: aws configure
+    pkg: python-simplejson
+    state: present
+    update_cache: true
+
+
+- name: copy dump SQL file to tmp
   template:
-    src: credentials
-    dest: /root/.aws/
+    src: dump.sql
+    dest: /var/tmp/
+
+
+- name: Run SQL commands to create database {{ pesbuk_db_name }}
+  mysql_db:
+        login_host: "{{ pesbuk_db_hostname }}"
+        login_password: "{{ pesbuk_db_password }}"
+        login_user: "{{ pesbuk_db_user }}"
+        login_port: "3306"
+        name: "{{ pesbuk_db_name }}"
+        state: present
+
+
+
+
+- name: Deploy Database Dump SQL to remote server
+  mysql_db:
+        login_host: "{{ pesbuk_db_hostname }}"
+        login_password: "{{ pesbuk_db_password }}"
+        login_user: "{{ pesbuk_db_user }}"
+        login_port: "3306"
+        name: "{{ pesbuk_db_name }}"
+        state: import
