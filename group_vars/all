@@ -22,6 +22,9 @@ bucket_name:
 cluster_name: 
 state_store: 
 
+#target dupm SQL
+target_dump: /var/tmp/dump.sql
+
 
 #Folder location to deploy DB Dump SQL
 item_path: /var/tmp/dump.sql
